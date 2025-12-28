@@ -66,7 +66,7 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
 
   useEffect(() => {
     if (initialVoucherState) {
-        setVoucherApplied(true);
+      setVoucherApplied(true);
     }
   }, [initialVoucherState]);
 
@@ -83,49 +83,49 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
       {/* FOMO Banner */}
       <div className="w-full flex items-center justify-center mb-16">
         <div className="bg-accent/10 border border-accent/20 px-4 py-2 rounded-full flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-            <span className="text-xs font-mono text-accent tracking-wide uppercase">
-                Early Bird Pricing • Price increases after 500 members
-            </span>
+          <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
+          <span className="text-xs font-mono text-accent tracking-wide uppercase">
+            Early Bird Pricing • Price increases after 500 members
+          </span>
         </div>
       </div>
 
       <div className="mb-12 max-w-3xl mx-auto text-center md:text-left">
         <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
-          Invest in your <span className="text-secondary">stack.</span> <br/>
+          Invest in your <span className="text-secondary">stack.</span> <br />
           <span className="text-white/30 text-3xl md:text-5xl">Stop burning cash on tools.</span>
         </h2>
         <p className="text-lg text-secondary leading-relaxed mb-8">
-          Harga di bawah ini <strong>gak masuk akal</strong> kalau dibandingin sama value 1.5TB+ assets & 7000+ automation templates yang lo dapet. 
+          Harga di bawah ini <strong>gak masuk akal</strong> kalau dibandingin sama value 1.5TB+ assets & 7000+ automation templates yang lo dapet.
           Ini bukan "biaya", ini <span className="text-white border-b border-accent/50 italic">unloading cost</span> buat bisnis lo.
         </p>
-        
+
         {/* VOUCHER STATUS */}
         <div className="flex flex-col items-center md:items-start min-h-[40px]">
-            {voucherApplied && (
-                <motion.div 
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="inline-flex items-center gap-3 px-4 py-2 bg-accent/10 border border-accent rounded-lg"
-                >
-                    <div className="p-1 bg-accent rounded-full text-black">
-                        <Check className="w-3 h-3" />
-                    </div>
-                    <div className="flex flex-col">
-                        <span className="text-[10px] font-mono text-accent/70 leading-none mb-1">VOUCHER CLAIMED</span>
-                        <span className="text-sm font-bold text-accent tracking-wide">2026LUSUKSES</span>
-                    </div>
-                    <button onClick={() => setVoucherApplied(false)} className="ml-2 text-accent/50 hover:text-white">
-                        <X className="w-4 h-4" />
-                    </button>
-                </motion.div>
-            )}
-            {!voucherApplied && (
-                 <div className="flex items-center gap-2 text-secondary/50 text-sm">
-                    <Ticket className="w-4 h-4" />
-                    <span>Have a code? Apply it at checkout.</span>
-                 </div>
-            )}
+          {voucherApplied && (
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="inline-flex items-center gap-3 px-4 py-2 bg-accent/10 border border-accent rounded-lg"
+            >
+              <div className="p-1 bg-accent rounded-full text-black">
+                <Check className="w-3 h-3" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-mono text-accent/70 leading-none mb-1">VOUCHER CLAIMED</span>
+                <span className="text-sm font-bold text-accent tracking-wide">VOUCHER GO TO 2026</span>
+              </div>
+              <button onClick={() => setVoucherApplied(false)} className="ml-2 text-accent/50 hover:text-white">
+                <X className="w-4 h-4" />
+              </button>
+            </motion.div>
+          )}
+          {!voucherApplied && (
+            <div className="flex items-center gap-2 text-secondary/50 text-sm">
+              <Ticket className="w-4 h-4" />
+              <span>Have a code? Apply it at checkout.</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -134,18 +134,17 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
         <div className="hidden md:block absolute top-[180px] -left-4 -right-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent border-t border-dashed border-white/10 z-0"></div>
 
         {tiers.map((tier) => (
-          <div 
+          <div
             key={tier.name}
-            className={`relative p-8 flex flex-col h-full border transition-all duration-300 group z-10 rounded-sm ${
-              tier.isPopular 
-                ? 'bg-[#121212] border-accent shadow-[0_0_60px_rgba(0,229,255,0.1)] scale-105' 
+            className={`relative p-8 flex flex-col h-full border transition-all duration-300 group z-10 rounded-sm ${tier.isPopular
+                ? 'bg-[#121212] border-accent shadow-[0_0_60px_rgba(0,229,255,0.1)] scale-105'
                 : 'bg-black/40 border-white/10 hover:border-white/30 hover:bg-white/[0.02]'
-            }`}
+              }`}
           >
             {tier.isPopular && (
               <div className="absolute top-0 inset-x-0 h-1 bg-accent shadow-[0_0_20px_#00E5FF]"></div>
             )}
-            
+
             {tier.isPopular && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest shadow-lg rounded-sm">
                 Most Builders Pick This
@@ -155,52 +154,51 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
             <div className="mb-6">
               <div className="flex justify-between items-start mb-4">
                 <h3 className={`text-xs font-mono tracking-widest uppercase ${tier.isPopular ? 'text-accent' : 'text-secondary'}`}>
-                    {tier.name}
+                  {tier.name}
                 </h3>
                 {tier.discountLabel && (
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
-                        tier.isPopular ? 'bg-accent/20 text-accent border-accent/30' : 'bg-white/10 text-white/50 border-white/10'
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${tier.isPopular ? 'bg-accent/20 text-accent border-accent/30' : 'bg-white/10 text-white/50 border-white/10'
                     }`}>
-                        {tier.discountLabel}
-                    </span>
+                    {tier.discountLabel}
+                  </span>
                 )}
               </div>
 
               {/* Price Anchoring Section */}
               <div className="flex flex-col">
-                  {tier.originalPrice && (
-                      <div className="text-secondary/40 text-sm line-through decoration-white/30 decoration-1 font-mono mb-1">
-                          {tier.originalPrice}
-                      </div>
-                  )}
-                  <div className="flex items-baseline gap-1">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                             key={voucherApplied ? "discounted" : "normal"}
-                             initial={{ opacity: 0, y: 10 }}
-                             animate={{ opacity: 1, y: 0 }}
-                             exit={{ opacity: 0, y: -10 }}
-                             transition={{ duration: 0.2 }}
-                             className={`text-4xl md:text-5xl font-bold tracking-tighter ${voucherApplied ? 'text-accent drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]' : 'text-white'}`}
-                        >
-                            {voucherApplied ? getDiscountedPrice(tier.price) : tier.price}
-                        </motion.div>
-                    </AnimatePresence>
-                    <span className="text-xs text-secondary/50 font-normal">/ lifetime</span>
+                {tier.originalPrice && (
+                  <div className="text-secondary/40 text-sm line-through decoration-white/30 decoration-1 font-mono mb-1">
+                    {tier.originalPrice}
                   </div>
-                  {voucherApplied && (
-                      <motion.span 
-                        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                        className="text-[10px] font-mono text-accent mt-1"
-                      >
-                        *USE CODE AT CHECKOUT
-                      </motion.span>
-                  )}
+                )}
+                <div className="flex items-baseline gap-1">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={voucherApplied ? "discounted" : "normal"}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className={`text-4xl md:text-5xl font-bold tracking-tighter ${voucherApplied ? 'text-accent drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]' : 'text-white'}`}
+                    >
+                      {voucherApplied ? getDiscountedPrice(tier.price) : tier.price}
+                    </motion.div>
+                  </AnimatePresence>
+                  <span className="text-xs text-secondary/50 font-normal">/ lifetime</span>
+                </div>
+                {voucherApplied && (
+                  <motion.span
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                    className="text-[10px] font-mono text-accent mt-1"
+                  >
+                    *USE CODE AT CHECKOUT
+                  </motion.span>
+                )}
               </div>
 
               <div className="mt-4 min-h-[50px]">
                 <p className={`text-sm leading-relaxed ${tier.isPopular ? 'text-white' : 'text-secondary/70'}`}>
-                    {tier.description}
+                  {tier.description}
                 </p>
               </div>
             </div>
@@ -219,16 +217,16 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
             </div>
 
             <a href={tier.checkoutUrl} target="_blank" rel="noopener noreferrer" className="block w-full mt-auto">
-                <Button 
-                variant={tier.isPopular ? 'primary' : 'outline'} 
+              <Button
+                variant={tier.isPopular ? 'primary' : 'outline'}
                 className={`w-full ${tier.isPopular ? 'shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(0,229,255,0.4)]' : ''}`}
-                >
+              >
                 Secure Access Now
-                </Button>
+              </Button>
             </a>
-            
+
             <div className="mt-4 flex items-center justify-center gap-2">
-                <AlertCircle className="w-3 h-3 text-secondary/30" />
+              <AlertCircle className="w-3 h-3 text-secondary/30" />
               <span className="text-[10px] text-secondary/30 font-mono uppercase tracking-wider">
                 30-Day Money Back Guarantee
               </span>
@@ -236,17 +234,17 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
           </div>
         ))}
       </div>
-      
+
       <div className="mt-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full bg-white/5">
-            <div className="flex -space-x-2">
-                {[1,2,3,4].map(i => (
-                    <div key={i} className="w-6 h-6 rounded-full bg-gray-700 border border-[#0B0B0B]"></div>
-                ))}
-            </div>
-            <p className="text-xs text-secondary/60">
-                Join <span className="text-white font-bold">1,204+ builders</span> who joined this week.
-            </p>
+          <div className="flex -space-x-2">
+            {[1, 2, 3, 4].map(i => (
+              <div key={i} className="w-6 h-6 rounded-full bg-gray-700 border border-[#0B0B0B]"></div>
+            ))}
+          </div>
+          <p className="text-xs text-secondary/60">
+            Join <span className="text-white font-bold">1,204+ builders</span> who joined this week.
+          </p>
         </div>
       </div>
     </Section>
