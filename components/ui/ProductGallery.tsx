@@ -4,34 +4,34 @@ import { ImageIcon, Eye } from 'lucide-react';
 
 const productImages: Record<number, string[]> = {
   1: [ // Web3
-    "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1620321023374-d1a68fddadb3?q=80&w=800&auto=format&fit=crop"
+    "/assets/products/web3_dashboard_1_1767426041937.png",
+    "/assets/products/web3_mobile_1_1767426062265.png",
+    "/assets/products/web3_laptop_1_1767426079789.png"
   ],
   2: [ // Course
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
+    "/assets/products/course_video_1_1767426095028.png",
+    "/assets/products/course_tablet_1_1767426111898.png",
+    "/assets/products/course_catalog_1_1767426129769.png"
   ],
   3: [ // Landing Pages
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+    "/assets/products/landing_page_monitor_1_1767426155064.png",
+    "/assets/products/landing_page_pricing_1_1767426173456.png",
+    "/assets/products/landing_page_features_1_1767426189204.png"
   ],
   4: [ // Data Science
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop"
+    "/assets/products/data_science_dashboard_1_1767426210494.png",
+    "/assets/products/data_science_notebook_1_1767426225375.png",
+    "/assets/products/data_science_network_1_1767426241940.png"
   ],
   5: [ // Mobile Apps
-    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop"
+    "/assets/products/mobile_app_fitness_1_1767426268965.png",
+    "/assets/products/mobile_app_social_1_1767426284585.png",
+    "/assets/products/mobile_app_ecommerce_1_1767426302887.png"
   ],
-  6: [ // n8n Automation
-    "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop", // Logic code
-    "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=800&auto=format&fit=crop", // Connector
-    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"  // Tech background
+  6: [ // Automation
+    "/assets/products/automation_workflow_1_1767426320295.png",
+    "/assets/products/automation_logs_1_1767426337882.png",
+    "/assets/products/automation_api_1_1767426354159.png"
   ]
 };
 
@@ -47,10 +47,10 @@ export const ProductGallery: React.FC<{ id: number }> = ({ id }) => {
         </div>
         <span className="text-[10px] text-secondary/30 font-mono">HOVER TO INSPECT</span>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {images.map((src, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,15 +58,15 @@ export const ProductGallery: React.FC<{ id: number }> = ({ id }) => {
             className="group relative aspect-[4/3] overflow-hidden rounded-sm border border-white/10 bg-white/[0.02]"
           >
             {/* Image */}
-            <img 
-              src={src} 
-              alt={`Preview ${idx + 1}`} 
+            <img
+              src={src}
+              alt={`Preview ${idx + 1}`}
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0"
             />
-            
+
             {/* Tech Overlay lines */}
             <div className="absolute inset-0 pointer-events-none border border-white/0 group-hover:border-accent/30 transition-colors duration-300"></div>
-            
+
             {/* Hover Action */}
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
               <div className="flex items-center gap-2 text-xs font-mono text-white border border-white/20 px-3 py-1.5 bg-black/50">

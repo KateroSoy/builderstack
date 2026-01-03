@@ -137,8 +137,8 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
           <div
             key={tier.name}
             className={`relative p-8 flex flex-col h-full border transition-all duration-300 group z-10 rounded-sm ${tier.isPopular
-                ? 'bg-[#121212] border-accent shadow-[0_0_60px_rgba(0,229,255,0.1)] scale-105'
-                : 'bg-black/40 border-white/10 hover:border-white/30 hover:bg-white/[0.02]'
+              ? 'bg-[#121212] border-accent shadow-[0_0_60px_rgba(0,229,255,0.1)] scale-105'
+              : 'bg-black/40 border-white/10 hover:border-white/30 hover:bg-white/[0.02]'
               }`}
           >
             {tier.isPopular && (
@@ -243,7 +243,7 @@ export const Pricing: React.FC<PricingProps> = ({ initialVoucherState = false })
             ))}
           </div>
           <p className="text-xs text-secondary/60">
-            Join <span className="text-white font-bold">1,204+ builders</span> who joined this week.
+            Join <span className="text-white font-bold">200+ builders</span> who joined this week.
           </p>
         </div>
       </div>
